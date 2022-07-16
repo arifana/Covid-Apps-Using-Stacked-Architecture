@@ -16,7 +16,6 @@ class Arc extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
-          title: 'Arif Komik Apps',
           debugShowCheckedModeBanner: false,
           useInheritedMediaQuery: true,
           builder: DevicePreview.appBuilder,
