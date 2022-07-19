@@ -1,4 +1,5 @@
 import 'package:arc_apps/application/app/constants/custom_colors.dart';
+import 'package:arc_apps/ui/views/home/widgets/home_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,8 +37,9 @@ class HomeView extends ViewModelBuilderWidget<HomeViewModel> {
             label: 'All Location',
           ),
         ],
-        currentIndex: viewModel.selectedIndex,
         selectedItemColor: kPrimaryColor,
+        backgroundColor: kBackgroundColor,
+        currentIndex: viewModel.selectedIndex,
         onTap: (i) => viewModel.changeSelectedIndex(i),
       ),
     );
@@ -46,18 +48,12 @@ class HomeView extends ViewModelBuilderWidget<HomeViewModel> {
   Widget _switchHomeView(HomeViewModel viewModel) {
     switch (viewModel.selectedIndex) {
       case 0:
-        return _defaultHomeView();
+        return const HomeWidget();
       case 1:
         return AllLocationWidget();
 
       default:
-        return _defaultHomeView();
+        return const HomeWidget();
     }
-  }
-
-  Widget _defaultHomeView() {
-    return const Center(
-      child: Text('Back Home'),
-    );
   }
 }
