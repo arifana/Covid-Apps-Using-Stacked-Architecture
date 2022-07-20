@@ -22,7 +22,7 @@ class AllLocationWidget extends HookViewModelWidget<HomeViewModel> {
             children: [
               ...viewModel.listCovidByLocation.map(
                 (data) {
-                  return _cardInformation(
+                  return cardInformation(
                     viewModel: viewModel,
                     fontColor: Colors.white,
                     textTitle: '${data.key ?? ''}',
@@ -42,7 +42,7 @@ class AllLocationWidget extends HookViewModelWidget<HomeViewModel> {
     );
   }
 
-  Widget _cardInformation({
+  Widget cardInformation({
     Color? backgroundColor,
     Color? fontColor,
     Function()? onTap,
@@ -71,6 +71,7 @@ class AllLocationWidget extends HookViewModelWidget<HomeViewModel> {
                 style: TextStyle(
                   fontSize: 16.sp,
                   color: fontColor ?? Colors.black,
+                  fontWeight: FontWeight.bold,
                 ),
                 maxLines: 5,
               ),
