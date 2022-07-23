@@ -1,4 +1,4 @@
-package com.example.arc_apps
+package com.arc.apps
 
 import io.flutter.embedding.android.FlutterActivity
 
